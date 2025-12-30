@@ -76,25 +76,4 @@ public class StoreRepository {
         return -1;
     }
 
-    public String selectOne(int id){
-        //커넥션 접속하기
-        Connection conn = DBConnection.getConnection();
-
-        //row 삽입(데이터 추가)
-        String sql = "select * from store_tb where id=? ";
-        try{
-            //2. 버퍼 달기
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, id);
-
-            //3. 쿼리 전송
-            int result = pstmt.executeUpdate();
-            //전송 결과 출력하기
-            return result;
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return null;
-    }
-
 }
