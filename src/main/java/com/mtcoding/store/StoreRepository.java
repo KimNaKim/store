@@ -7,7 +7,9 @@ import java.util.ArrayList;
 
 //store_tb 전담 레포지토리
 public class StoreRepository {
+    //CRUD
 
+    //Read = select = get
     public Store selectOne(int id){
         //id로 상품 찾기
         //커넥션 접속하기
@@ -42,7 +44,7 @@ public class StoreRepository {
         }
         return null;
     }
-
+    //Read = select = get
     public ArrayList<Store> selectAll(){
         //등록된 상품 모두 보기
         //커넥션 접속하기
@@ -81,6 +83,7 @@ public class StoreRepository {
         return null;
     }
 
+    //Delete = delete = delete
     public int deleteOne(int id){
         //커넥션 접속하기
         Connection conn = DBConnection.getConnection();
@@ -102,7 +105,7 @@ public class StoreRepository {
         return -1;
 
     }
-
+    //Update = update = put
     public int updateOne(int id, String name, int price, int qty){
         //커넥션 접속하기
         Connection conn = DBConnection.getConnection();
@@ -127,7 +130,7 @@ public class StoreRepository {
         return -1;
 
     }
-
+    //Create = insert = post
     public int insert(int id, String name, int price, int qty){
         //커넥션 접속하기
         Connection conn = DBConnection.getConnection();
